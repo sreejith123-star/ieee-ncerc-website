@@ -11,8 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── HAMBURGER ──
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
-  hamburger?.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu?.classList.toggle('open'); });
-  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => { hamburger?.classList.remove('open'); mobileMenu?.classList.remove('open'); }));
+  const mobileBackdrop = document.querySelector('.mobile-backdrop');
+
+  function closeMobileMenu() {
+    hamburger?.classList.remove('open');
+    mobileMenu?.classList.remove('open');
+    mobileBackdrop?.classList.remove('open');
+  }
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+    mobileBackdrop?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-menu a').forEach(a =>
+    a.addEventListener('click', closeMobileMenu)
+  );
+  mobileBackdrop?.addEventListener('click', closeMobileMenu);
 
   // ── ACTIVE NAV ──
   const current = window.location.pathname.split('/').pop() || 'index.html';

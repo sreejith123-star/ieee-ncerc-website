@@ -112,20 +112,44 @@ ul { list-style:none; }
   top:var(--nav-h);
   left:0;
   right:0;
-  background:rgba(6,8,15,0.98);
+  background:rgba(6,8,15,0.99);
   border-bottom:1px solid var(--border);
-  padding:1.5rem 2rem;
+  padding:1.5rem 2rem 3rem;
   z-index:9999;
   flex-direction:column;
-  gap:1.2rem;
-  backdrop-filter:blur(20px);
+  gap:0;
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
   max-height:calc(100vh - var(--nav-h));
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
+  box-shadow:0 20px 60px rgba(0,0,0,0.8);
 }
 .mobile-menu.open { display:flex !important; }
-.mobile-menu a { font-size:0.9rem; color:var(--text2); font-family:var(--sans); padding:0.4rem 0; }
-.mobile-menu a:hover, .mobile-menu a.active { color:#fff; }
+.mobile-menu a {
+  font-size:1rem;
+  color:var(--text2);
+  font-family:var(--sans);
+  padding:1rem 0;
+  border-bottom:1px solid var(--border);
+  display:block;
+  transition:color 0.2s, padding-left 0.2s;
+}
+.mobile-menu a:last-child { border-bottom:none; }
+.mobile-menu a:hover, .mobile-menu a.active { color:#fff; padding-left:0.5rem; }
+
+/* Backdrop — blocks all page interaction when menu is open */
+.mobile-backdrop {
+  display:none;
+  position:fixed;
+  inset:0;
+  top:var(--nav-h);
+  background:rgba(0,0,0,0.6);
+  z-index:9998;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.mobile-backdrop.open { display:block; }
 
 /* ── HERO ── */
 #hero {
