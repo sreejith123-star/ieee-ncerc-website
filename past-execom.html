@@ -27,12 +27,21 @@
 </head>
 <body>
   <nav id="navbar">
-    <div class="nav-brand"><div class="nav-brand-dot"></div>IEEE SB NCERC</div>
+    <a href="index.html" class="nav-brand">
+      <img src="./images/ieee-logo.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" class="nav-logo-img" alt="IEEE SB NCERC"/>
+      <span style="display:none;align-items:center;gap:0.6rem;"><div class="nav-brand-dot"></div>IEEE SB NCERC</span>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a href="team.html" class="active">Execom</a></li>
+      <li class="dropdown">
+        <a href="team.html" class="dropbtn active">Execom <i>▾</i></a>
+        <ul class="dropdown-content">
+          <li><a href="team.html">Present Execom</a></li>
+          <li><a href="past-execom.html">Past Execom</a></li>
+        </ul>
+      </li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -40,9 +49,13 @@
     <div class="hamburger"><span></span><span></span><span></span></div>
   </nav>
   <div class="mobile-menu">
-    <a href="index.html">Home</a><a href="about.html">About Us</a>
-    <a href="events.html">Events</a><a href="team.html">Execom</a>
-    <a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Events</a>
+    <a href="team.html">Present Execom</a>
+    <a href="past-execom.html" class="active">Past Execom</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </div>
 
   <div class="page-hero">
