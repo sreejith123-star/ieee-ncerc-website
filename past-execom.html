@@ -60,23 +60,25 @@
       margin-bottom: 0.8rem;
       opacity: 0;
       transform: translateY(25px);
-      transition: all 0.6s 0.1s;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
     }
     .bento-name {
       font-family: var(--display);
       font-weight: 800;
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 6vw, 2.8rem);
       color: #fff;
       margin: 0;
       line-height: 1;
       opacity: 0;
       transform: translateY(25px);
-      transition: all 0.6s 0.2s;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
     }
-    .bento-chair .bento-name { font-size: 3.5rem; }
+    .bento-chair .bento-name { font-size: clamp(2rem, 8vw, 3.5rem); }
 
     .bento-item:hover .bento-role,
-    .bento-item:hover .bento-name {
+    .bento-item:hover .bento-name,
+    .bento-item.active .bento-role,
+    .bento-item.active .bento-name {
       opacity: 1;
       transform: translateY(0);
     }
@@ -89,13 +91,11 @@
       }
       .bento-chair { grid-row: span 1; height: 500px; }
       .bento-item { height: 350px; }
-      .bento-name { font-size: 2.2rem !important; opacity: 1; transform: none; }
-      .bento-role { opacity: 1; transform: none; }
     }
 
     /* Society Specific Glows (Unified to Brand Blue) */
     .pes-glow, .cass-glow, .wie-glow, .iapels-glow { 
-      background: rgba(59, 130, 246, 0.3); 
+      background: rgba(0, 242, 254, 0.3); 
     }
   </style>
 </head>
@@ -153,7 +153,7 @@
 
       <!-- Faculty Members -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 3rem;">
-        <div class="section-label reveal"><span>//</span> Guidance & Excellence</div>
+        <div class="section-label reveal">Guidance & Excellence</div>
         <h3 class="section-title reveal" style="font-size: 2.2rem;">Faculty Advisors</h3>
         <div class="reveal" style="width: 60px; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); margin: 0 auto 1.5rem; border-radius: 2px;"></div>
       </div>
@@ -189,7 +189,7 @@
       
       <!-- Chairperson -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Leading the Branch</div>
+        <div class="section-label reveal">Leading the Branch</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, var(--gold), #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Chairperson</span>
         </h2>
@@ -207,7 +207,7 @@
 
       <!-- Vice Chairperson -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Strategic Leadership</div>
+        <div class="section-label reveal">Strategic Leadership</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #38bdf8, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Vice Chairperson</span>
         </h2>
@@ -225,7 +225,7 @@
 
       <!-- Secretary -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Operational Excellence</div>
+        <div class="section-label reveal">Operational Excellence</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Secretary</span>
         </h2>
@@ -243,7 +243,7 @@
 
       <!-- Treasurer -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Financial Stewardship</div>
+        <div class="section-label reveal">Financial Stewardship</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, var(--gold), #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Treasurer</span>
         </h2>
@@ -261,7 +261,7 @@
 
       <!-- Webmaster -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Digital Presence</div>
+        <div class="section-label reveal">Digital Presence</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Webmaster</span>
         </h2>
@@ -279,7 +279,7 @@
 
       <!-- ECC -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Digital Communication</div>
+        <div class="section-label reveal">Digital Communication</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #0ea5e9, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ECC</span>
         </h2>
@@ -297,7 +297,7 @@
 
       <!-- Link Rep -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Inter-branch Connect</div>
+        <div class="section-label reveal">Inter-branch Connect</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #6366f1, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Link Representative</span>
         </h2>
@@ -315,7 +315,7 @@
 
       <!-- MDC -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Membership Development</div>
+        <div class="section-label reveal">Membership Development</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #22c55e, #16a34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">MDC</span>
         </h2>
@@ -333,9 +333,9 @@
 
       <!-- Editorial & Content Team -->
       <div class="section-center" style="margin-top: 5rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Voice of the Branch</div>
+        <div class="section-label reveal">Voice of the Branch</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
-          <span style="background: linear-gradient(135deg, var(--accent), #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Editorial Team</span>
+          <span style="background: linear-gradient(135deg, var(--accent), #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Editorial Team</span>
         </h2>
         <div class="reveal" style="width: 60px; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); margin: 0 auto 1.5rem; border-radius: 2px;"></div>
       </div>
@@ -351,7 +351,7 @@
 
       <!-- Design Team -->
       <div class="section-center" style="margin-top: 5rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Creative Vision</div>
+        <div class="section-label reveal">Creative Vision</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Design Team</span>
         </h2>
@@ -378,7 +378,7 @@
       
       <!-- PES -->
       <div class="section-center" style="margin-top: 4rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Power & Energy Society</div>
+        <div class="section-label reveal">Power & Energy Society</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">IEEE PES</span>
         </h2>
@@ -410,7 +410,7 @@
 
       <!-- WIE -->
       <div class="section-center" style="margin-top: 5rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Women In Engineering</div>
+        <div class="section-label reveal">Women In Engineering</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">IEEE WIE</span>
         </h2>
@@ -435,7 +435,7 @@
 
       <!-- CASS -->
       <div class="section-center" style="margin-top: 5rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Circuits & Systems Society</div>
+        <div class="section-label reveal">Circuits & Systems Society</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #00b4d8, #0077b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">IEEE CASS</span>
         </h2>
@@ -460,7 +460,7 @@
 
       <!-- IA/PELS -->
       <div class="section-center" style="margin-top: 5rem; margin-bottom: 2.5rem;">
-        <div class="section-label reveal"><span>//</span> Industry Apps & Power Electronics</div>
+        <div class="section-label reveal">Industry Apps & Power Electronics</div>
         <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem;">
           <span style="background: linear-gradient(135deg, #a855f7, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">IEEE IA/PELS</span>
         </h2>

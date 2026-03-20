@@ -11,16 +11,16 @@
   --surface: #161e2e;
   --border:  #1e2d45;
   --border2: #253550;
-  --accent:  #3b82f6;
-  --accent2: #2563eb;
+  --accent:  #00f2fe; /* Neon Cyan */
+  --accent2: #4facfe;
   --gold:    #f59e0b;
   --green:   #10b981;
   --red:     #ef4444;
-  --purple:  #8b5cf6;
-  --cyan:    #06b6d4;
-  --text:    #fafaf9; /* Warm Ivory White */
-  --text2:   #d6d3d1; /* Warm Stone Silver */
-  --muted:   #a8a29e; /* Warm Muted Tone */
+  --purple:  #ffffff; /* Pure White Glow */
+  --cyan:    #00f2fe;
+  --text:    #ffffff; 
+  --text2:   #d6d3d1;
+  --muted:   #a8a29e;
   --mono:    'Space Mono', monospace;
   --sans:    'DM Sans', sans-serif;
   --display: 'Syne', sans-serif;
@@ -145,9 +145,9 @@ body::after {
 }
 .glass-card-wonder:hover {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(59, 130, 246, 0.3);
+  border-color: rgba(0, 242, 254, 0.3);
   box-shadow: 
-    0 20px 60px rgba(59, 130, 246, 0.15),
+    0 20px 60px rgba(0, 242, 254, 0.15),
     inset 0 0 30px rgba(59,130,246,0.05);
   transform: translateY(-8px) !important;
   animation-play-state: paused;
@@ -268,7 +268,7 @@ body::after {
   animation:fadeUp 0.9s var(--ease-human) forwards; opacity:0; animation-delay:0.5s;
 }
 .hero-title .highlight {
-  background: linear-gradient(135deg, #fff 0%, #d4d4d8 40%, #60a5fa 70%, #a78bfa 100%);
+  background: linear-gradient(135deg, #fff 0%, #d4d4d8 40%, #4facfe 70%, #a78bfa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -432,7 +432,7 @@ body::after {
   transition:all 0.4s cubic-bezier(.34,1.56,.64,1);
   cursor:pointer;
 }
-.execom-card:hover {
+.execom-card:hover, .execom-card.active {
   transform:translateY(-8px);
   box-shadow:0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(59,130,246,0.1);
   border-color:var(--accent2);
@@ -442,7 +442,7 @@ body::after {
   background:linear-gradient(135deg, var(--bg3), var(--surface));
 }
 .execom-photo img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
-.execom-card:hover .execom-photo img { transform:scale(1.08); }
+.execom-card:hover .execom-photo img, .execom-card.active .execom-photo img { transform:scale(1.08); }
 .execom-placeholder {
   width:100%; height:100%; display:flex; align-items:center; justify-content:center;
   font-family:var(--display); font-weight:800; font-size:3rem;
@@ -459,7 +459,7 @@ body::after {
   position:absolute; inset:0; background:linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%);
   transform:translateX(-100%); transition:transform 0.6s;
 }
-.execom-card:hover .execom-shine { transform:translateX(100%); }
+.execom-card:hover .execom-shine, .execom-card.active .execom-shine { transform:translateX(100%); }
 .execom-info { padding:1.2rem; }
 .execom-role {
   font-family:var(--mono); font-size:0.56rem; letter-spacing:0.14em;
@@ -549,7 +549,7 @@ body::after {
 .stat-item { display:flex; flex-direction:column; gap:0.4rem; align-items:center; }
 .stat-num {
   font-family:var(--display); font-weight:800; font-size:4rem; line-height:1;
-  background:linear-gradient(135deg, #60a5fa, #a78bfa);
+  background:linear-gradient(135deg, #4facfe, #a78bfa);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
 .stat-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); }
@@ -799,7 +799,7 @@ footer { background:#020408; border-top:1px solid var(--border); padding:5rem 2.
 .quote-txt {
   font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   line-height: 1.35; font-style: italic; color: #fff; margin-bottom: 0.8rem;
-  background: linear-gradient(135deg, #fff, #93c5fd, #60a5fa);
+  background: linear-gradient(135deg, #fff, #93c5fd, #4facfe);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .quote-by { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
@@ -874,7 +874,7 @@ footer { background:#020408; border-top:1px solid var(--border); padding:5rem 2.
 .execom-card:hover {
   transform: translateY(-7px) !important;
   box-shadow: 0 16px 48px rgba(0,0,0,0.5) !important;
-  border-color: #3b82f6 !important;
+  border-color: #00f2fe !important;
 }
 .execom-photo {
   width: 100% !important;
@@ -920,7 +920,7 @@ footer { background:#020408; border-top:1px solid var(--border); padding:5rem 2.
   z-index: 10001 !important;
   transform: scale(1.25) translateY(-20px) !important;
   box-shadow: 
-    0 30px 100px rgba(59, 130, 246, 0.5),
+    0 30px 100px rgba(0, 242, 254, 0.5),
     0 0 40px rgba(255, 255, 255, 0.2) !important;
   border-color: #fff !important;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
@@ -938,10 +938,10 @@ footer { background:#020408; border-top:1px solid var(--border); padding:5rem 2.
 
 /* Specific Society Glows */
 .society-card-active.pes { box-shadow: 0 30px 100px rgba(239, 68, 68, 0.6) !important; }
-.society-card-active.cass { box-shadow: 0 30px 100px rgba(59, 130, 246, 0.6) !important; }
+.society-card-active.cass { box-shadow: 0 30px 100px rgba(0, 242, 254, 0.6) !important; }
 .society-card-active.ias { box-shadow: 0 30px 100px rgba(245, 158, 11, 0.6) !important; }
 .society-card-active.pels { box-shadow: 0 30px 100px rgba(239, 68, 68, 0.6) !important; }
-.society-card-active.wie { box-shadow: 0 30px 100px rgba(236, 72, 153, 0.6) !important; }
+.society-card-active.wie { box-shadow: 0 30px 100px rgba(0, 242, 254, 0.6) !important; }
 
 /* ══ FEATURED EXECOM (COUNSELOR) ══ */
 .featured-execom-section {
@@ -1287,7 +1287,7 @@ footer {
 .about-stat .num {
   transition: color 0.3s !important;
 }
-.about-stat:hover .num { color: #60a5fa !important; }
+.about-stat:hover .num { color: #4facfe !important; }
 
 /* ── Ticker glow effect ── */
 .ticker {
@@ -1525,7 +1525,7 @@ body.page-exit {
   text-align: center !important;
 }
 .hero-title .highlight {
-  background: linear-gradient(135deg,#60a5fa,#a78bfa) !important;
+  background: linear-gradient(135deg,#4facfe,#a78bfa) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;

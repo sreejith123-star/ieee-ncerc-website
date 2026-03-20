@@ -141,6 +141,24 @@ document.addEventListener('DOMContentLoaded', () => {
       d.style.transform = `translateY(${scroll * speed}px)`;
     });
   });
+
+  // ── MOBILE REVEAL TABS ──
+  const revealCards = document.querySelectorAll('.bento-item, .execom-card, .epc-wrapper, .event-card');
+  revealCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        // Toggle active class on the clicked card
+        const isActive = this.classList.contains('active');
+        
+        // Optionally close other cards
+        revealCards.forEach(c => c.classList.remove('active'));
+        
+        if (!isActive) {
+          this.classList.add('active');
+        }
+      }
+    });
+  });
 });
 
 /**
