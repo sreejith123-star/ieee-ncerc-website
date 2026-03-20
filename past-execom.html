@@ -20,67 +20,68 @@
     }
     .bento-item {
       position: relative;
-      border-radius: 36px;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
     }
     .bento-item:hover {
-      transform: scale(1.02) translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 50px rgba(59,130,246,0.15);
+      transform: translateY(-8px);
       z-index: 10;
     }
     .bento-chair { grid-row: span 2; }
     .bento-img {
       width: 100%;
-      height: 100%;
+      flex: 1;
+      min-height: 0;
       object-fit: cover;
-      transition: transform 0.8s ease, filter 0.8s ease;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease, box-shadow 0.6s ease;
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
       filter: grayscale(20%) brightness(0.85);
     }
-    .bento-item:hover .bento-img { transform: scale(1.08); filter: grayscale(0%) brightness(1); }
+    .bento-item:hover .bento-img { 
+      transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) scale3d(1.04, 1.04, 1.04); 
+      filter: grayscale(0%) brightness(1.05); 
+      border-color: var(--accent);
+      box-shadow: -15px 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(59,130,246,0.2);
+    }
     .bento-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(12,16,26,0.9) 0%, rgba(12,16,26,0.2) 60%, transparent 100%);
+      position: relative;
+      background: transparent !important;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 2.5rem;
+      align-items: center;
+      text-align: center;
+      padding: 1.2rem 0.5rem 0.5rem;
     }
     .bento-role {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.35em;
-      margin-bottom: 0.8rem;
-      opacity: 0;
-      transform: translateY(25px);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+      letter-spacing: 0.25em;
+      margin-bottom: 0.5rem;
+      transition: all 0.5s;
     }
     .bento-name {
       font-family: var(--display);
       font-weight: 800;
-      font-size: clamp(1.5rem, 6vw, 2.8rem);
+      font-size: 1.3rem;
       color: #fff;
       margin: 0;
-      line-height: 1;
-      opacity: 0;
-      transform: translateY(25px);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+      line-height: 1.2;
+      transition: all 0.5s;
     }
-    .bento-chair .bento-name { font-size: clamp(2rem, 8vw, 3.5rem); }
-
-    .bento-item:hover .bento-role,
-    .bento-item:hover .bento-name,
-    .bento-item.active .bento-role,
-    .bento-item.active .bento-name {
-      opacity: 1;
-      transform: translateY(0);
+    .bento-chair .bento-name { font-size: 1.7rem; }
+    
+    .bento-item:hover .bento-name {
+      color: var(--accent);
     }
 
     @media (max-width: 900px) {
