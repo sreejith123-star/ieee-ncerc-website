@@ -10,12 +10,17 @@
 
     /* ── MEMBER CARD GRID ── */
     .member-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
       max-width: 1200px;
       margin: 2rem auto 4rem;
       padding: 0 1rem;
+    }
+    .member-grid .member-card {
+      flex: 1 1 180px;
+      max-width: 220px;
     }
     .member-card {
       display: flex;
@@ -91,23 +96,36 @@
       border-radius: 2px;
     }
 
-    /* ── RESPONSIVE ── */
     /* ── 4-COLUMN LEADERSHIP ROW ── */
     .member-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
       max-width: 1000px;
       margin: 2rem auto 2rem;
       padding: 0 1rem;
     }
-    .member-grid-4 .member-card { align-items: center; }
+    .member-grid-4 .member-card { 
+      align-items: center; 
+      flex: 1 1 200px;
+      max-width: 240px;
+    }
 
     @media (max-width: 700px) {
       .member-grid-4 { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
-      .member-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+      .member-grid { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem; 
+      }
+      .member-grid .member-card {
+        flex: 0 0 calc(50% - 0.45rem);
+        max-width: 180px;
+      }
       .member-name { font-size: 0.78rem; }
       .member-role { font-size: 0.5rem; }
     }
@@ -296,7 +314,7 @@
           <div class="member-info"><span class="member-role" style="color:#00f2fe;">WIE Secretary</span><p class="member-name">Amrita Nair</p></div>
         </div>
         <div class="member-card">
-          <div class="member-photo"><img src="images/Akhila.jpg" alt="Akhila"></div>
+          <div class="member-photo"><img src="images/Akhila.jpg" alt="Akhila" style="object-position: center;"></div>
           <div class="member-info"><span class="member-role" style="color:#00f2fe;">WIE Representative</span><p class="member-name">Akhila</p></div>
         </div>
       </div>
