@@ -1870,7 +1870,11 @@ footer { z-index: 2 !important; }
 .connect-wrap { position: relative; z-index: 2; }
 /* Fix team */
 .team-section-label { text-align: left !important; }
-.execom-grid { text-align: left !important; }
+.execom-grid { 
+  text-align: left !important; 
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 350px;
+}
 
 /* ── PARTICLE CANVAS FINAL FIX ── */
 #page-bg-canvas {
@@ -2038,6 +2042,7 @@ body:has(#page-bg-canvas) footer         { background: rgba(2,4,8,0.92)    !impo
   .execom-name { font-size: 0.82rem !important; }
   .execom-role { font-size: 0.52rem !important; }
   .team-center-wrap { padding: 0 !important; }
+  .member-photo img { filter: none !important; transition: none !important; }
 
   /* WHY JOIN */
   .why-section { padding: 3rem 1rem !important; }
@@ -2200,6 +2205,17 @@ body:has(#page-bg-canvas) footer         { background: rgba(2,4,8,0.92)    !impo
   color: var(--text2);
   margin-bottom: 2rem;
 }
+
+.member-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 3rem auto 2rem;
+      padding: 0 1rem;
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 300px;
+    }
 
 .sidebar-meta-grid {
   display: grid;

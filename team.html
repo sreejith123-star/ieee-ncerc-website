@@ -22,6 +22,8 @@
       width: 100%;
       max-width: 220px;
       margin: 0 auto;
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 250px;
     }
     .member-card {
       display: flex;
@@ -53,6 +55,7 @@
       display: block;
       transition: transform 0.5s ease, filter 0.4s;
       filter: grayscale(10%);
+      will-change: transform, filter;
     }
     .member-card:hover .member-photo img {
       transform: scale(1.06);
@@ -112,6 +115,8 @@
       width: 100%;
       max-width: 240px;
       margin: 0 auto;
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 280px;
     }
 
     @media (max-width: 700px) {
@@ -201,19 +206,19 @@
 
       <div class="execom-grid" style="grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
         <div class="execom-card reveal-up">
-          <div class="execom-photo"><img src="images/past-2025/Shobha Mam.jpg" alt="Dr. Sobha Manakkal" loading="eager" decoding="async"></div>
+          <div class="execom-photo"><img src="images/past-2025/Shobha Mam.jpg" alt="Dr. Sobha Manakkal" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="execom-info"><span class="execom-role" style="color:var(--gold);">Faculty Advisor</span><span class="execom-name">Dr. Sobha Manakkal</span></div>
         </div>
         <div class="execom-card reveal-up" style="animation-delay: 0.1s;">
-          <div class="execom-photo"><img src="images/past-2025/Neethu mam.jpg" alt="Dr. Neethu M" loading="eager" decoding="async"></div>
+          <div class="execom-photo"><img src="images/past-2025/Neethu mam.jpg" alt="Dr. Neethu M" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="execom-info"><span class="execom-role" style="color:var(--red);">PES Advisor</span><span class="execom-name">Dr. Neethu M</span></div>
         </div>
         <div class="execom-card reveal-up" style="animation-delay: 0.1s;">
-          <div class="execom-photo"><img src="images/past-2025/Mridula mam.jpg" alt="Dr. Mredhula L" loading="eager" decoding="async"></div>
+          <div class="execom-photo"><img src="images/past-2025/Mridula mam.jpg" alt="Dr. Mredhula L" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="execom-info"><span class="execom-role" style="color:var(--accent);">WIE Advisor</span><span class="execom-name">Dr. Mredhula L</span></div>
         </div>
         <div class="execom-card reveal-up" style="animation-delay: 0.2s;">
-          <div class="execom-photo"><img src="images/past-2025/sanooj sir.jpg" alt="Lt. Sanoj T" loading="eager" decoding="async"></div>
+          <div class="execom-photo"><img src="images/past-2025/sanooj sir.jpg" alt="Lt. Sanoj T" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="execom-info"><span class="execom-role" style="color:var(--green);">IAS Advisor</span><span class="execom-name">Lt. Sanoj T</span></div>
         </div>
         <div class="execom-card reveal-up" style="animation-delay: 0.3s;">
@@ -235,19 +240,19 @@
       <!-- LEADERSHIP ROW: Chair / Vice / Secretary / Treasurer / Webmaster -->
       <div class="member-grid reveal-scale" style="margin-top:1rem;">
         <div class="member-card magnetic reveal">
-          <div class="member-photo"><img src="images/AARDRA SIVADAS C.jpg" alt="Aardra Sivadas C" loading="eager" decoding="async"></div>
+          <div class="member-photo"><img src="images/AARDRA SIVADAS C.jpg" alt="Aardra Sivadas C" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="member-info"><span class="member-role" style="color:var(--gold);">SB Chairperson</span><p class="member-name">Aardra Sivadas C</p></div>
         </div>
         <div class="member-card magnetic reveal">
-          <div class="member-photo"><img src="images/sidtharth.jpeg" alt="Sidharth S" loading="eager" decoding="async"></div>
+          <div class="member-photo"><img src="images/sidtharth.jpeg" alt="Sidharth S" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="member-info"><span class="member-role" style="color:#38bdf8;">SB Vice Chairperson</span><p class="member-name">Sidharth S</p></div>
         </div>
         <div class="member-card magnetic reveal">
-          <div class="member-photo"><img src="images/UMESH S KRISHNAN.jpg" alt="Umesh S Krishnan" loading="eager" decoding="async"></div>
+          <div class="member-photo"><img src="images/UMESH S KRISHNAN.jpg" alt="Umesh S Krishnan" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="member-info"><span class="member-role" style="color:#10b981;">SB Secretary</span><p class="member-name">Umesh S Krishnan</p></div>
         </div>
         <div class="member-card magnetic reveal">
-          <div class="member-photo"><img src="images/ARYANANDA S NAIR.jpg" alt="Aryananda S Nair" loading="eager" decoding="async"></div>
+          <div class="member-photo"><img src="images/ARYANANDA S NAIR.jpg" alt="Aryananda S Nair" loading="eager" decoding="async" fetchpriority="high"></div>
           <div class="member-info"><span class="member-role" style="color:var(--gold);">SB Treasurer</span><p class="member-name">Aryananda S Nair</p></div>
         </div>
         <div class="member-card magnetic reveal">
