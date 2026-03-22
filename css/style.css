@@ -1776,7 +1776,7 @@ body:not([data-page="home"]) .section-label::before {
   .societies-wrapper { grid-template-columns: 1fr 1fr !important; }
   .execom-home-grid { grid-template-columns: 1fr 1fr !important; }
   .society-abbr-big { font-size: 1.8rem !important; }
-  #hero h1 { font-size: 1.9rem !important; }
+  .hero-main-title { font-size: clamp(2.8rem,17vw,5rem) !important; white-space: normal !important; word-break: break-word !important; }
 }
 
 /* ── Tablet ── */
@@ -1992,7 +1992,7 @@ body:has(#page-bg-canvas) footer         { background: rgba(2,4,8,0.92)    !impo
 
   /* HERO */
   #hero { padding: calc(56px + 1.5rem) 1rem 3rem !important; }
-  #hero h1 { font-size: clamp(1.8rem,7vw,2.8rem) !important; }
+  .hero-main-title { font-size: clamp(3.5rem,20vw,7rem) !important; white-space: normal !important; word-break: break-word !important; }
   .hero-badge { font-size: 0.52rem !important; padding: 0.25rem 0.7rem !important; }
   .hero-sub { font-size: 0.62rem !important; letter-spacing: 0.15em !important; }
   .hero-cta { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; }
@@ -2107,7 +2107,7 @@ body:has(#page-bg-canvas) footer         { background: rgba(2,4,8,0.92)    !impo
   .societies-wrapper { grid-template-columns: 1fr 1fr !important; }
   .execom-home-grid { grid-template-columns: 1fr 1fr !important; gap: 0.6rem !important; }
   .execom-grid { grid-template-columns: 1fr 1fr !important; gap: 0.6rem !important; }
-  #hero h1 { font-size: 1.7rem !important; }
+  .hero-main-title { font-size: clamp(3rem,18vw,6rem) !important; white-space: normal !important; word-break: break-word !important; }
   .hero-badge { display: none !important; }
   .section-title { font-size: 1.4rem !important; }
   .about-stat .num { font-size: 1.6rem !important; }
