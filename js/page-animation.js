@@ -34,18 +34,21 @@ function initPageAnimation() {
       if(p.x<=0||p.x>=W) p.vx*=-1;
       if(p.y<=0||p.y>=H) p.vy*=-1;
       p.x=Math.max(0,Math.min(W,p.x)); p.y=Math.max(0,Math.min(H,p.y));
+      
       const a = p.alpha*(0.45+Math.sin(p.pulse)*0.55);
-      const col = p.white ? `rgba(255,255,255,` : `rgba(180,215,255,`;
-      // Big glow
-      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*10);
-      g.addColorStop(0, col+(a*0.5)+')'); g.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r*10,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
-      // Core
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = col+a+')'; ctx.fill();
-      // Bright center
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.4,0,Math.PI*2);
-      ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fill();
+      const colorPrefix = p.white ? '255,255,255,' : '180,215,255,';
+      
+      // Simple glow (faster than radial gradient)
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 8, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${colorPrefix}${a * 0.15})`;
+      ctx.fill();
+
+      // Main point
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${colorPrefix}${a})`;
+      ctx.fill();
     });
     requestAnimationFrame(draw);
   }
