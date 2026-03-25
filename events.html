@@ -597,27 +597,46 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
       <!-- LATEST -->
       <div id="tab-latest">
         <div class="ev-grid">
-          <!-- IDEATHON (NEWEST) -->
-          <div class="ev-card magnetic reveal" style="--ev-col:#00f2fe;--ev-glow:rgba(236,72,153,.3); cursor: pointer;"
-            onclick="openEventSidebar('ideathon')">
+          <!-- CIRCUIT SHOWDOWN (NEWEST) -->
+          <div class="ev-card reveal" style="--ev-col:#a78bfa;--ev-glow:rgba(167,139,250,.3); cursor: pointer;"
+            onclick="openEventSidebar('circuitshowdown')">
             <div class="ev-img tall">
-              <img src="./images/ideathon-image.jpeg" alt="WIE Ideathon 2025" loading="eager" fetchpriority="high" />
+              <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown 2026" loading="eager" fetchpriority="high" />
               <div class="ev-img-glow"></div>
-              <div class="ev-img-label">WIE Affinity · March 16</div>
+              <div class="ev-img-label">CASS · February 26</div>
             </div>
             <div class="ev-body">
               <div class="ev-latest-badge">
                 <div class="ev-latest-dot"></div>Latest Event
               </div>
               <div class="ev-tags">
-                <span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
-                <span class="ev-tag"
-                  style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Ideathon</span>
+                <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">IEEE SB NCERC</span>
+                <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">CASS SBC</span>
+                <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Circuit Design</span>
               </div>
-              <div class="ev-title big">WIE Ideathon — Women's Day 2025</div>
-              <div class="ev-desc">Ideas don’t ask who you are only how far you’re willing to think. Have a bold idea?
+              <div class="ev-title big">Circuit Showdown 2026</div>
+              <div class="ev-desc">A dynamic, multi-stage competition where student teams stepped into the role of tech startups — designing, building, and pitching innovative electronic circuits.</div>
+              <div class="ev-meta"><span>Feb 26, 2026</span><span>Aryabhatta Seminar Hall</span></div>
+            </div>
+          </div>
+
+          <!-- IDEATHON -->
+          <div class="ev-card magnetic reveal" style="--ev-col:#00f2fe;--ev-glow:rgba(236,72,153,.3); cursor: pointer;"
+            onclick="openEventSidebar('ideathon')">
+            <div class="ev-img tall">
+              <img src="./images/ideathon-image.jpeg" alt="WIE Ideathon 2025" loading="lazy" />
+              <div class="ev-img-glow"></div>
+              <div class="ev-img-label">WIE Affinity · March 16</div>
+            </div>
+            <div class="ev-body">
+              <div class="ev-tags">
+                <span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
+                <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Ideathon</span>
+              </div>
+              <div class="ev-title">WIE Ideathon — Women's Day 2025</div>
+              <div class="ev-desc">Ideas don't ask who you are only how far you're willing to think. Have a bold idea?
                 Join the WIE Ideathon.</div>
-              <div class="ev-meta"><span>March 16</span><span>Seminar Hall</span><span>₹100 / Team</span></div>
+              <div class="ev-meta"><span>March 16</span><span>Seminar Hall</span><span>Rs.100 / Team</span></div>
             </div>
           </div>
 
@@ -646,6 +665,27 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
       <!-- ALL EVENTS -->
       <div id="tab-all" style="display:none;">
         <div class="ev-grid">
+          <!-- CIRCUIT SHOWDOWN (NEWEST) -->
+          <div class="ev-card" style="--ev-col:#a78bfa;--ev-glow:rgba(167,139,250,.25); cursor: pointer;"
+            onclick="openEventSidebar('circuitshowdown')">
+            <div class="ev-img tall">
+              <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown 2026" loading="lazy">
+              <div class="ev-img-glow"></div>
+              <div class="ev-img-label">CASS · Feb 26</div>
+            </div>
+            <div class="ev-body">
+              <div class="ev-latest-badge">
+                <div class="ev-latest-dot"></div>Latest
+              </div>
+              <div class="ev-tags">
+                <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">CASS SBC</span>
+                <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Circuit Design</span>
+              </div>
+              <div class="ev-title">Circuit Showdown 2026</div>
+              <div class="ev-desc">A dynamic multi-stage competition where teams designed, built, and pitched innovative electronic circuits as tech startups.</div>
+              <div class="ev-meta"><span>Feb 26, 2026</span><span>NCERC</span></div>
+            </div>
+          </div>
           <!-- IDEATHON -->
           <div class="ev-card" style="--ev-col:#00f2fe;--ev-glow:rgba(236,72,153,.25); cursor: pointer;"
             onclick="openEventSidebar('ideathon')">
@@ -655,13 +695,10 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
               <div class="ev-img-label">WIE · Mar 16</div>
             </div>
             <div class="ev-body">
-              <div class="ev-latest-badge">
-                <div class="ev-latest-dot"></div>Latest
-              </div>
               <div class="ev-tags"><span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
               </div>
               <div class="ev-title">WIE Ideathon — Women's Day 2025</div>
-              <div class="ev-desc">Have a bold idea? Start here. Ideas don’t ask who you are only how far you’re willing
+              <div class="ev-desc">Have a bold idea? Start here. Ideas don't ask who you are only how far you're willing
                 to think.</div>
               <div class="ev-meta"><span>Mar 16, 2025</span><span>NCERC</span></div>
             </div>
@@ -674,9 +711,6 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
               <div class="ev-img-label">WIE · Mar 2025</div>
             </div>
             <div class="ev-body">
-              <div class="ev-latest-badge">
-                <div class="ev-latest-dot"></div>Latest
-              </div>
               <div class="ev-tags"><span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
               </div>
               <div class="ev-title">Debate Competition — Women's Day 2025</div>
@@ -685,9 +719,9 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
               <div class="ev-meta"><span>March 12</span><span>NCERC</span></div>
             </div>
           </div>
-          
         </div>
       </div>
+
 
       <!-- PES -->
       <div id="tab-pes" style="display:none;">
@@ -699,7 +733,27 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
       <!-- CASS -->
       <div id="tab-cass" style="display:none;">
         <div class="ev-grid">
-          <p style="text-align:center; color:var(--muted); padding:3rem 0; width:100%; grid-column: 1 / -1;">No events conducted yet.</p>
+          <div class="ev-card magnetic reveal" style="--ev-col:#a78bfa;--ev-glow:rgba(167,139,250,.3); cursor: pointer;"
+            onclick="openEventSidebar('circuitshowdown')">
+            <div class="ev-img tall">
+              <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown 2026" loading="lazy" />
+              <div class="ev-img-glow"></div>
+              <div class="ev-img-label">CASS · Feb 26</div>
+            </div>
+            <div class="ev-body">
+              <div class="ev-latest-badge">
+                <div class="ev-latest-dot"></div>Latest
+              </div>
+              <div class="ev-tags">
+                <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">IEEE SB NCERC</span>
+                <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">CASS SBC</span>
+                <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Circuit Design</span>
+              </div>
+              <div class="ev-title big">Circuit Showdown 2026</div>
+              <div class="ev-desc">A dynamic, multi-stage competition where student teams designed, built, and pitched innovative electronic circuits aimed at delivering practical and market-ready solutions.</div>
+              <div class="ev-meta"><span>Feb 26, 2026</span><span>Aryabhatta Seminar Hall</span></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -729,9 +783,6 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
               <div class="ev-img-label">WIE · Mar 16</div>
             </div>
             <div class="ev-body">
-              <div class="ev-latest-badge">
-                <div class="ev-latest-dot"></div>Latest
-              </div>
               <div class="ev-tags"><span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE
                   Affinity</span><span class="ev-tag"
                   style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Ideathon</span></div>
@@ -749,9 +800,6 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
               <div class="ev-img-label">WIE · Mar 2025</div>
             </div>
             <div class="ev-body">
-              <div class="ev-latest-badge">
-                <div class="ev-latest-dot"></div>Latest
-              </div>
               <div class="ev-tags"><span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE
                   Affinity</span><span class="ev-tag"
                   style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Debate</span></div>
@@ -920,6 +968,35 @@ exactly the same dimensions (like square images, e.g. height: 327px for all of t
                <div class="s-photo-grid">
                  <img src="./images/debate-competition1.jpeg" alt="Poster">
                </div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (eventId === 'circuitshowdown') {
+        title.innerText = "Circuit Showdown 2026";
+        body.innerHTML = `
+          <div class="sidebar-img-gallery">
+            <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown 2026" class="sidebar-main-img">
+          </div>
+          <div class="sidebar-info-section">
+            <p class="sidebar-long-desc">IEEE SB NCERC, in collaboration with IEEE CASS SBC NCERC, successfully organized "Circuit Showdown" on 26th February 2026 at the Aryabhatta Seminar Hall, NCERC.</p>
+            <p class="sidebar-long-desc">Circuit Showdown was a dynamic, multi-stage competition where student teams stepped into the role of tech startups. Participants were challenged to design, build, and pitch innovative electronic circuits aimed at delivering practical and market-ready solutions.</p>
+            <p class="sidebar-long-desc">The event served as a platform to nurture creativity, technical expertise, and entrepreneurial thinking. Through multiple stages of evaluation, participants showcased their problem-solving abilities, circuit design skills, and presentation techniques, making the competition both intellectually engaging and highly interactive.</p>
+            <p class="sidebar-long-desc">The program witnessed enthusiastic participation from students across various departments, fostering a strong spirit of innovation, collaboration, and teamwork. The event concluded on a high note with the distribution of prizes to the winners, along with appreciation extended to all participants for their active involvement and contributions.</p>
+            
+            <div class="sidebar-meta-grid">
+              <div class="s-meta-item">Date: February 26, 2026</div>
+              <div class="s-meta-item">Venue: Aryabhatta Seminar Hall, NCERC</div>
+              <div class="s-meta-item">Organised by: IEEE SB NCERC &amp; IEEE CASS SBC NCERC</div>
+            </div>
+
+            <div class="sidebar-additional-photos" style="margin-top: 3rem;">
+              <h4>Event Photos</h4>
+              <div class="s-photo-grid">
+                <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown Photo 1">
+                <img src="./images/circuit shutdown event12.jpeg.png" alt="Circuit Showdown Photo 2">
+              </div>
             </div>
           </div>
         `;
