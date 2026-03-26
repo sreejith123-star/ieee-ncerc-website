@@ -202,6 +202,30 @@
       0% { transform: scale(0.5); opacity: 1; }
       100% { transform: scale(3); opacity: 0; }
     }
+
+    /* ── LATEST EVENTS SECTION STYLES ── */
+    .ev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; text-align: left; margin-top: 3rem; }
+    .ev-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; position: relative; transition: all .4s cubic-bezier(.34, 1.4, .64, 1); cursor: pointer; text-decoration: none; display: block; }
+    .ev-card:hover { transform: translateY(-9px) scale(1.015); box-shadow: 0 28px 65px rgba(0, 0, 0, .6), 0 0 50px rgba(0, 242, 254, 0.12); border-color: rgba(0, 242, 254, 0.45); }
+    .ev-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ev-col, rgba(255, 255, 255, .3)); z-index: 2; transition: height .3s; }
+    .ev-card:hover::before { height: 5px; }
+    .ev-img { overflow: hidden; position: relative; background: #0a0a14; height: 200px; }
+    .ev-img.tall { height: auto; min-height: 200px; max-height: 300px; }
+    .ev-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.34, 1.2, .64, 1); }
+    .ev-card:hover .ev-img img { transform: scale(1.04); }
+    .ev-img-glow { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, var(--ev-glow, rgba(255, 255, 255, .06)), transparent 70%); pointer-events: none; }
+    .ev-body { padding: 1.4rem; }
+    .ev-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .7rem; }
+    .ev-tag { font-family: var(--mono); font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; padding: .2rem .65rem; border-radius: 50px; border: 1px solid; display: inline-block; }
+    .ev-title { font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: .4rem; }
+    .ev-title.big { font-size: 1.2rem; }
+    .ev-desc { font-size: .8rem; color: var(--text2); line-height: 1.75; margin-bottom: .8rem; }
+    .ev-meta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .ev-meta span { font-family: var(--mono); font-size: .58rem; color: var(--muted); }
+    .ev-latest-badge { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--mono); font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; background: rgba(34, 197, 94, .15); color: #22c55e; border: 1px solid rgba(34, 197, 94, .4); padding: .2rem .7rem; border-radius: 50px; margin-bottom: .6rem; }
+    .ev-latest-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: latPulse 1.5s infinite; }
+    @keyframes latPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .5) } 50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0) } }
+    @media(max-width:700px) { .ev-grid { grid-template-columns: 1fr !important; } }
   </style>
 </head>
 <body id="home-body">
@@ -309,6 +333,74 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- LATEST EVENTS -->
+<section id="latest-events-home" class="section section-mid">
+  <div class="home-wrap">
+    <div class="section-label reveal-stagger">Recent Highlights</div>
+    <h2 class="section-title reveal-stagger">Latest Events</h2>
+    
+    <div class="ev-grid reveal-stagger">
+      <!-- IDEATHON (NEWEST) -->
+      <a href="events.html?tab=latest" class="ev-card" style="--ev-col:#00f2fe;--ev-glow:rgba(236,72,153,.3);">
+        <div class="ev-img tall">
+          <img src="./images/ideathon-image.jpeg" alt="WIE Ideathon 2025" loading="lazy" />
+          <div class="ev-img-glow"></div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-latest-badge">
+            <div class="ev-latest-dot"></div>Latest Event
+          </div>
+          <div class="ev-tags">
+            <span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
+            <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Ideathon</span>
+          </div>
+          <div class="ev-title big">WIE Ideathon — Women's Day 2025</div>
+          <p class="ev-desc">Ideas don't ask who you are only how far you're willing to think. Have a bold idea? Join the WIE Ideathon.</p>
+          <div class="ev-meta"><span>March 16, 2025</span><span>Seminar Hall</span></div>
+        </div>
+      </a>
+
+      <!-- DEBATE -->
+      <a href="events.html?tab=latest" class="ev-card" style="--ev-col:#00f2fe;--ev-glow:rgba(236,72,153,.3);">
+        <div class="ev-img tall">
+          <img src="images/debate-competition1.jpeg" alt="Debate Competition" loading="lazy">
+          <div class="ev-img-glow"></div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-tags">
+            <span class="ev-tag" style="border-color:#00f2fe;color:#00f2fe;">WIE Affinity</span>
+            <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Debate</span>
+          </div>
+          <div class="ev-title">Debate Competition — Women's Day 2025</div>
+          <p class="ev-desc">Empowering voices, exchanging ideas and celebrating perspectives! Organized as part of Women's Day celebrations.</p>
+          <div class="ev-meta"><span>March 12, 2025</span><span>Seminar Hall</span></div>
+        </div>
+      </a>
+
+      <!-- CIRCUIT SHOWDOWN -->
+      <a href="events.html?tab=latest" class="ev-card" style="--ev-col:#a78bfa;--ev-glow:rgba(167,139,250,.3);">
+        <div class="ev-img tall">
+          <img src="./images/circuit shutdown event11.jpeg" alt="Circuit Showdown 2026" loading="lazy" />
+          <div class="ev-img-glow"></div>
+        </div>
+        <div class="ev-body">
+          <div class="ev-tags">
+            <span class="ev-tag" style="border-color:#a78bfa;color:#a78bfa;">IEEE CASS NCERC</span>
+            <span class="ev-tag" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6);">Workshop</span>
+          </div>
+          <div class="ev-title">Circuit Showdown 2026</div>
+          <p class="ev-desc">Dynamic competition where tech setups were challenged to design, build, and pitch innovative electronic circuits.</p>
+          <div class="ev-meta"><span>Feb 26, 2026</span><span>Aryabhatta Hall</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top: 4rem;" class="reveal-stagger">
+      <a href="events.html" class="btn btn-outline">Explore All Events →</a>
+    </div>
   </div>
 </section>
 
